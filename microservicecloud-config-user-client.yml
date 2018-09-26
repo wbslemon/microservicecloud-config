@@ -6,11 +6,10 @@ spring:
 
 server:
   port: 8080
-spring:
-  profiles: dev
 
 
 spring:
+   profiles: dev
    application:
     name: microservicecloud-config-user-client
    datasource:
@@ -50,11 +49,9 @@ info:
 
 server:
   port: 8081
+  
 spring:
-  profiles: prod
-
-
-spring:
+   profiles: prod
    application:
     name: microservicecloud-config-user-client
    datasource:
