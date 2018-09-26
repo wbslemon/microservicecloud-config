@@ -1,0 +1,67 @@
+spring:
+  profiles:
+    active: dev
+
+---
+
+server:
+  port: 9527
+
+spring:
+  profiles: dev
+  application:
+    name: microservicecloud-zuul-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+
+
+zuul:
+  prefix: /tlw
+  ignored-services: "*"
+  routes:
+    myuser.serviceId: microservicecloud-config-user-client
+    myuser.path: /myuser/**
+
+info:
+  app.name: tlw-microcloud
+  company.name: www.tlw.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+---
+
+server:
+  port: 9527
+
+spring:
+  profiles: prod
+  application:
+    name: microservicecloud-zuul-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8002/eureka
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+
+
+zuul:
+  prefix: /tlw
+  ignored-services: "*"
+  routes:
+    myuser.serviceId: microservicecloud-config-user-client
+    myuser.path: /myuser/**
+
+info:
+  app.name: tlw-microcloud
+  company.name: www.tlw.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
