@@ -12,7 +12,7 @@ spring:
 
 spring:
    application:
-    name: microservicecloud-user
+    name: microservicecloud-config-user-client
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.jdbc.Driver             # mysql驱动包
@@ -56,7 +56,7 @@ spring:
 
 spring:
    application:
-    name: microservicecloud-user
+    name: microservicecloud-config-user-client
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.jdbc.Driver             # mysql驱动包
